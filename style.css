@@ -1,0 +1,336 @@
+/* GERAL E TIPOGRAFIA */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7; /* Fundo muito claro */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: #b96e97; /* Rosa mais profissional */
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-weight: 600;
+}
+
+/* BOTÕES GERAIS E ADMIN */
+#btn-admin-access {
+    background-color: #3d3b3c; /* Azul escuro/Chumbo */
+    color: #b96e97;
+    padding: 05px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#btn-admin-access:hover {
+    background-color: #34495e;
+}
+
+#quick-actions button {
+    background-color: #1abc9c; /* Amarelo Vibrante */
+    color: #333;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+#quick-actions button:hover {
+    background-color: #f39c12;
+}
+
+/* LAYOUT PRINCIPAL (MAIN) */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+}
+
+section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Foco nas colunas principais */
+#agendamento-form {
+    flex: 1 1 350px; 
+}
+
+#grade-horarios {
+    flex: 2 1 500px;
+}
+
+/* FORMULÁRIOS */
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #555;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #d15197;
+    outline: none;
+}
+
+form button[type="submit"] {
+    background-color: #1abc9c; /* Verde Ação */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #16a085;
+}
+
+/* GRADE DE HORÁRIOS */
+#lista-agendamentos {
+    max-height: 450px; 
+    overflow-y: auto;
+    padding-right: 15px; 
+}
+
+.agendamento-item {
+    border-left: 5px solid #d15197; 
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background-color: #fdfdff; /* Quase branco */
+    transition: transform 0.2s;
+}
+
+.agendamento-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.agendamento-item strong {
+    color: #d15197;
+}
+
+/* MENSAGENS */
+.mensagem-sucesso {
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+}
+
+.mensagem-erro {
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* LAYOUT LADO A LADO (Satisfação / Promoções) */
+#painel-principal-extra {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 100%;
+    gap: 30px; /* Mais espaço entre as colunas */
+    background: none; 
+    box-shadow: none;
+    padding: 0;
+}
+
+#feedback-column, #promocoes-column {
+    flex: 1 1 45%; 
+    min-width: 350px; 
+}
+
+#satisfacao-cliente, #promocoes-display {
+    padding: 25px;
+    border-radius: 10px;
+    height: 100%;
+}
+
+#promocoes-display ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#promocoes-display li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #ddd;
+}
+
+
+/* ÁREA ADMIN */
+#admin-tools {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #ecf0f1; /* Fundo cinza claro para destacar a área */
+}
+
+#admin-action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#admin-action-buttons button {
+    flex: 1 1 180px;
+    background-color: #3498db; /* Azul Admin */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+#admin-action-buttons button:hover {
+    background-color: #2980b9;
+}
+
+#fidelidade-admin-display {
+    background-color: #e8dff1; /* Lilás suave */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+#lista-clientes-fieis {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#lista-clientes-fieis li {
+    background-color: #9b59b6; /* Roxo para destaque */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* MODAL DE LOGIN */
+.modal {
+    position: fixed;
+    z-index: 1000; /* Alto para sobrepor tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content button {
+    margin-top: 15px;
+}
+
+.modal-content button[type="button"] { 
+    background-color: #95a5a6; /* Cinza para cancelar */
+}
+
+
+/* RESPONSIVIDADE (MOBILE FIRST) */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    #agendamento-form, 
+    #grade-horarios, 
+    #feedback-column, 
+    #promocoes-column {
+        flex: 1 1 100%; /* Ocupa a largura total em mobile */
+        min-width: unset;
+    }
+
+    #painel-principal-extra {
+        flex-direction: column; 
+        gap: 15px;
+    }
+    
+    #admin-action-buttons {
+        flex-direction: column;
+    }
+    
+    #admin-action-buttons button {
+        width: 100%; 
+    }
+}
