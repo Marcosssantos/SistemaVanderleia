@@ -8,6 +8,70 @@ body {
     flex-direction: column;
     align-items: center;
 }
+:root {
+    --cor-principal: #ff69b4;
+    --cor-secundaria: #5cb85c;
+    --espacamento: 10px;
+    --raio-borda: 4px;
+    --sombra: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header {
+    background-color: var(--cor-principal);
+    padding: var(--espacamento);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra);
+}
+
+form button {
+    background-color: var(--cor-principal);
+    padding: var(--espacamento);
+    border-radius: var(--raio-borda);
+    cursor: pointer;
+}
+
+.agendamento-item {
+    border: 1px solid #eee;
+    padding: var(--espacamento);
+    margin-bottom: var(--espacamento);
+    border-radius: var(--raio-borda);
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+    #agendamento-form {
+        padding: 10px;
+    }
+    #grade-horarios {
+        padding: 10px;
+    }
+    .agendamento-item {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    #agendamento-form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #grade-horarios {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
 
 header {
     background-color: #ff69b4; /* Rosa Vibrante */
