@@ -3,44 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de agendamento online para Vanderleia Cabeleireira">
+    <meta name="keywords" content="agendamento, cabelereira, vanderleia">
     <title>Agendamento | Vanderleia Cabeleireira</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
     <header>
         <h1>✂️ Vanderleia Cabeleireira</h1>
         <p>Sistema de Agendamento Online</p>
-        <button id="btn-admin-access">Área do Administrador</button>
+      
         <div id="quick-actions">
-            <button id="btn-satisfacao" onclick="showFeedback()">⭐ Satisfação do Cliente</button>
-            <button id="btn-promo" onclick="showPromotions()">💰 Promoções</button>
+            <button id="btn-satisfacao" onclick="showFeedback()" aria-label="Satisfação do cliente">⭐ Satisfação do Cliente</button>
+            <button id="btn-promo" onclick="showPromotions()" aria-label="Promoções">💰 Promoções<button id="btn-admin-access" aria-label="Acesso ao painel de administração">ADM</button></button>
         </div>
     </header>
 
-    <main>
+    <main id="conteudo-principal">
         <section id="agendamento-form">
             <h2>Novo Agendamento</h2>
             <form id="form-agendamento">
                 <label for="cliente">Cliente:</label>
-                <input type="text" id="cliente" required placeholder="Seu Nome">
+                <input type="text" id="cliente" required placeholder="Seu Nome" aria-label="Nome do cliente">
                 <label for="profissional">Profissional:</label>
-                <select id="profissional" required>
+                <select id="profissional" required aria-label="Escolha o profissional">
                     <option value="" disabled selected>Escolha o Profissional</option>
                     <option value="1">Vanderleia (Cabelo)</option>
                     <option value="2">Mayara (Manicure/Pedicure)</option>
                     <option value="3">Michele (Estética)</option>
                 </select>
                 <label for="servico">Serviço:</label>
-                <select id="servico" required>
+                <select id="servico" required aria-label="Escolha o serviço">
                     <option value="" disabled selected>Escolha o Serviço</option>
-                    <option value="30">Corte Feminino (30 min)</option>
+                    <option value="20">Corte Masculino (30  min)</option>
+                    <option value="30">Corte Feminino (30  min)</option>
                     <option value="60">Coloração (60 min)</option>
                     <option value="45">Manicure e Pedicure (45 min)</option>
                     <option value="120">Mechas/Luzes (120 min)</option>
                 </select>
                 <label for="data-hora">Data e Hora:</label>
-                <input type="datetime-local" id="data-hora" required>
+                <input type="datetime-local" id="data-hora" required aria-label="Data e hora do agendamento">
                 <button type="submit">Agendar Horário</button>
             </form>
             <div id="mensagem" class="hidden"></div>
@@ -55,41 +58,28 @@
 
         <section id="admin-tools" class="hidden">
             <h2>⚙️ Ferramentas Admin</h2>
-            <div id="admin-action-buttons">
-                <button onclick="excluirAgendamentoAdmin()">🗑️ Excluir Agendamento</button> 
-                <button onclick="editarHorarioAdmin()">✏️ Editar Horário</button>
-                <button onclick="gerenciarPromocoesAdmin()">📣 Gerenciar Promoções</button>
-                <button onclick="cadastrarClienteFielAdmin()">⭐ Cadastrar Cliente Fiel</button> 
-                <button onclick="excluirClienteFielAdmin()">❌ Excluir Cliente Fiel</button> 
-            </div>
-            
-            <div id="fidelidade-admin-display">
-                <h3>Clientes Fiéis Cadastrados</h3>
-                <ul id="lista-clientes-fieis">
-                    </ul>
-            </div>
+            <button onclick="excluirAgendamentoAdmin()" aria-label="Excluir agendamento">🗑️ Excluir Agendamento</button> 
+            <button onclick="editarHorarioAdmin()" aria-label="Editar horário">✏️ Editar Horário</button>
+            <button onclick="gerenciarPromocoesAdmin()" aria-label="Gerenciar promoções">📣 Gerenciar Promoções</button>
+            <button onclick="cadastrarClienteFielAdmin()" aria-label="Cadastrar cliente fiel">⭐ Cadastrar Cliente Fiel</button> 
+            <button onclick="excluirClienteFielAdmin()" aria-label="Excluir cliente fiel">❌ Excluir Cliente Fiel</button> 
         </section>
         
         <section id="painel-principal-extra">
-            <div id="feedback-column">
-                <div id="satisfacao-cliente">
-                    <h3>⭐ Satisfação do Cliente</h3>
-                    <p id="feedback-display">Nenhum feedback recebido ainda.</p>
-                    <form id="form-feedback">
-                        <input type="text" id="feedback-name" placeholder="Seu Nome" required>
-                        <input type="text" id="feedback-input" placeholder="Seu feedback (ex: 5/5, Ótimo!)" required>
-                        <button type="submit">Enviar Feedback</button>
-                    </form>
-                </div>
+            <div id="satisfacao-cliente">
+                <h3>⭐ Satisfação do Cliente</h3>
+                <p id="feedback-display">Nenhum feedback recebido ainda.</p>
+                <form id="form-feedback">
+                    <input type="text" id="feedback-name" placeholder="Seu Nome" required aria-label="Nome do cliente">
+                    <input type="text" id="feedback-input" placeholder="Seu feedback (ex: 5/5, Ótimo!)" required aria-label="Feedback do cliente">
+                    <button type="submit">Enviar Feedback</button>
+                </form>
             </div>
-
-            <div id="promocoes-column">
-                <div id="promocoes-display">
-                    <h3>💰 Promoções Atuais</h3>
-                    <ul id="lista-promocoes">
-                        <li>Nenhuma promoção ativa no momento.</li>
-                    </ul>
-                </div>
+            <div id="promocoes-display">
+                <h3>💰 Promoções Atuais</h3>
+                <ul id="lista-promocoes">
+                    <li>Nenhuma promoção ativa no momento.</li>
+                </ul>
             </div>
         </section>
         
@@ -104,9 +94,9 @@
             <h2>Acesso Restrito</h2>
             <form id="form-login">
                 <label for="admin-user">Usuário:</label>
-                <input type="text" id="admin-user" required>
+                <input type="text" id="admin-user" required aria-label="Usuário">
                 <label for="admin-pass">Senha:</label>
-                <input type="password" id="admin-pass" required>
+                <input type="password" id="admin-pass" required aria-label="Senha">
                 <button type="submit">Entrar</button>
                 <button type="button" onclick="closeModal()">Cancelar</button>
                 <p id="login-message" class="hidden"></p>

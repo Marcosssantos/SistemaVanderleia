@@ -1,66 +1,44 @@
-/* GERAL E TIPOGRAFIA */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f7f7; /* Fundo muito claro */
+    font-family: Arial, sans-serif;
+      background-color: #FFFFFF;
     color: #333;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: 1.6;
 }
 
-/* CABEÇALHO */
 header {
-    background-color: #b96e97; /* Rosa mais profissional */
+    background-color: #ff69b4; /* Rosa Vibrante */
+    background-image: linear-gradient(to bottom, #FFC5C5, #FFFFFF);
     color: white;
-    padding: 20px 0;
+     padding: 20px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 header h1 {
-    margin: 0;
-    font-size: 2.8em;
-    font-weight: 600;
+  color: #a71e79;
+  font-size: 36px;
+  margin-bottom: 10px;
 }
-
-/* BOTÕES GERAIS E ADMIN */
-#btn-admin-access {
-    background-color: #3d3b3c; /* Azul escuro/Chumbo */
-    color: #b96e97;
-    padding: 05px 10px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: background-color 0.3s;
+#agendamento-form {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   flex: 1;
+    min-width: 350px;
 }
-
-#btn-admin-access:hover {
-    background-color: #34495e;
+#agendamento-form button[type="submit"] {
+  background-color: #FF69B4;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
-
-#quick-actions button {
-    background-color: #1abc9c; /* Amarelo Vibrante */
-    color: #333;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: 5px;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-
-#quick-actions button:hover {
-    background-color: #f39c12;
-}
-
-/* LAYOUT PRINCIPAL (MAIN) */
 main {
     display: flex;
     flex-wrap: wrap;
@@ -72,95 +50,72 @@ main {
 
 section {
     background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: box-shadow 0.3s;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px; /* Espaço entre as seções */
 }
 
-section:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
 
-/* Foco nas colunas principais */
-#agendamento-form {
-    flex: 1 1 350px; 
-}
 
 #grade-horarios {
-    flex: 2 1 500px;
+    flex: 2;
+    min-width: 500px;
+      background-color: #F7F7F7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* FORMULÁRIOS */
+/* Estilização do Formulário */
 form label {
     display: block;
-    margin-top: 15px;
-    font-weight: 600;
-    color: #555;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-form input,
-form select {
+form input[type="text"],
+form select,
+form input[type="datetime-local"] {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin-top: 5px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 4px;
     box-sizing: border-box; 
-    transition: border-color 0.3s;
 }
 
-form input:focus,
-form select:focus {
-    border-color: #d15197;
-    outline: none;
-}
-
-form button[type="submit"] {
-    background-color: #1abc9c; /* Verde Ação */
+form button {
+    background-color: #ff69b4;
     color: white;
     padding: 12px 20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 16px;
     width: 100%;
-    font-weight: bold;
-    margin-top: 20px;
     transition: background-color 0.3s;
+    margin-top: 5px;
 }
 
-form button[type="submit"]:hover {
-    background-color: #16a085;
+form button:hover {
+    background-color: #e55a9b;
 }
 
-/* GRADE DE HORÁRIOS */
-#lista-agendamentos {
-    max-height: 450px; 
-    overflow-y: auto;
-    padding-right: 15px; 
-}
-
+/* Estilização da Grade */
 .agendamento-item {
-    border-left: 5px solid #d15197; 
+    border: 1px solid #eee;
     padding: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border-radius: 6px;
-    background-color: #fdfdff; /* Quase branco */
-    transition: transform 0.2s;
-}
-
-.agendamento-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
 }
 
 .agendamento-item strong {
-    color: #d15197;
+    color: #ff69b4;
 }
 
-/* MENSAGENS */
 .mensagem-sucesso {
     padding: 10px;
     margin-top: 15px;
@@ -180,105 +135,43 @@ form button[type="submit"]:hover {
 }
 
 .hidden {
-    display: none !important;
+    display: none !important; /* Importante para garantir que sumam */
 }
 
-/* LAYOUT LADO A LADO (Satisfação / Promoções) */
-#painel-principal-extra {
-    display: flex;
-    flex-wrap: wrap; 
-    width: 100%;
-    gap: 30px; /* Mais espaço entre as colunas */
-    background: none; 
-    box-shadow: none;
-    padding: 0;
-}
-
-#feedback-column, #promocoes-column {
-    flex: 1 1 45%; 
-    min-width: 350px; 
-}
-
-#satisfacao-cliente, #promocoes-display {
-    padding: 25px;
-    border-radius: 10px;
-    height: 100%;
-}
-
-#promocoes-display ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-#promocoes-display li {
-    padding: 8px 0;
-    border-bottom: 1px dotted #ddd;
-}
-
-
-/* ÁREA ADMIN */
-#admin-tools {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: #ecf0f1; /* Fundo cinza claro para destacar a área */
-}
-
-#admin-action-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-#admin-action-buttons button {
-    flex: 1 1 180px;
-    background-color: #3498db; /* Azul Admin */
+/* NOVO: Estilo para os botões rápidos no cabeçalho */
+#btn-admin-access {
+    background-color: #FFC5C5;
     color: white;
-    padding: 10px;
+    padding: 8px 15px;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-
-#admin-action-buttons button:hover {
-    background-color: #2980b9;
-}
-
-#fidelidade-admin-display {
-    background-color: #e8dff1; /* Lilás suave */
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-#lista-clientes-fieis {
-    list-style-type: none;
-    padding-left: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-#lista-clientes-fieis li {
-    background-color: #9b59b6; /* Roxo para destaque */
-    color: white;
-    padding: 5px 10px;
     border-radius: 4px;
-    font-size: 0.9em;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-/* MODAL DE LOGIN */
+#quick-actions button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+/* ------------------------------------- */
+/* ESTILOS DO MODAL DE LOGIN */
+/* ------------------------------------- */
 .modal {
     position: fixed;
-    z-index: 1000; /* Alto para sobrepor tudo */
+    z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); 
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -286,51 +179,90 @@ form button[type="submit"]:hover {
 
 .modal-content {
     background-color: #fefefe;
-    padding: 30px;
-    border-radius: 10px;
-    width: 90%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
     max-width: 400px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .modal-content button {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
+/* Estilo para o botão Cancelar do modal */
 .modal-content button[type="button"] { 
-    background-color: #95a5a6; /* Cinza para cancelar */
+    background-color: #ccc;
+    color: #333;
+}
+
+/* Ferramentas Admin */
+#admin-tools {
+    width: 100%;
+    text-align: center;
+}
+#admin-tools button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 45%; /* Para ficar lado a lado */
+    max-width: 200px;
+}
+
+/* Novo estilo para o botão Cancelar na grade de agendamentos */
+.btn-cancelar {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block; 
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-cancelar:hover {
+    background-color: #c82333;
+}
+/* ... (Restante do CSS) ... */
+
+/* Estilização da Grade */
+#lista-agendamentos {
+    /* NOVO: Estilos para rolagem após o limite */
+    max-height: 450px; /* Altura máxima para mostrar 3-4 agendamentos antes de rolar */
+    overflow-y: auto;
+    padding-right: 15px; /* Adiciona espaço para a barra de rolagem não colidir com o conteúdo */
+}
+
+.agendamento-item {
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
 }
 
 
-/* RESPONSIVIDADE (MOBILE FIRST) */
-@media (max-width: 768px) {
-    main {
-        padding: 15px;
-        gap: 15px;
-    }
 
-    header h1 {
-        font-size: 2em;
-    }
-
-    #agendamento-form, 
-    #grade-horarios, 
-    #feedback-column, 
-    #promocoes-column {
-        flex: 1 1 100%; /* Ocupa a largura total em mobile */
-        min-width: unset;
-    }
-
-    #painel-principal-extra {
-        flex-direction: column; 
-        gap: 15px;
-    }
-    
-    #admin-action-buttons {
-        flex-direction: column;
-    }
-    
-    #admin-action-buttons button {
-        width: 100%; 
-    }
-}
+/* ... (Restante do CSS) ... */
