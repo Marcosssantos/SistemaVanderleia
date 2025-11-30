@@ -68,7 +68,7 @@ form button {
 
 @media (min-width: 1200px) {
     main {
-        max-width: 1200px;
+        max-width: 950px;
         margin: 0 auto;
     }
 }
