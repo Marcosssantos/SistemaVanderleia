@@ -2,108 +2,56 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <title>SGF PRO - Gestão de Frota</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sistema de agendamento online para Vanderleia Cabeleireira">
-    <meta name="keywords" content="agendamento, cabelereira, vanderleia">
-    <title>Agendamento | Vanderleia Cabeleireira</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
-    <header>
-        <h1>✂️ Vanderleia Cabeleireira</h1>
-        <p>Sistema de Agendamento Online</p>
-      
-        <div id="quick-actions">
-            <button id="btn-satisfacao" onclick="showFeedback()" aria-label="Satisfação do cliente">⭐ Satisfação do Cliente</button>
-            <button id="btn-promo" onclick="showPromotions()" aria-label="Promoções">💰 Promoções<button id="btn-admin-access" aria-label="Acesso ao painel de administração">ADM</button></button>
-        </div>
-    </header>
 
-    <main id="conteudo-principal">
-        <section id="agendamento-form">
-            <h2>Novo Agendamento</h2>
-            <form id="form-agendamento">
-                <label for="cliente">Cliente:</label>
-                <input type="text" id="cliente" required placeholder="Seu Nome" aria-label="Nome do cliente">
-                <label for="profissional">Profissional:</label>
-                <select id="profissional" required aria-label="Escolha o profissional">
-                    <option value="" disabled selected>Escolha o Profissional</option>
-                    <option value="1">Vanderleia (Cabelo)</option>
-                    <option value="2">Mayara (Manicure/Pedicure)</option>
-                    <option value="3">Michele (Estética)</option>
-                </select>
-                <label for="servico">Serviço:</label>
-                <select id="servico" required aria-label="Escolha o serviço">
-                    <option value="" disabled selected>Escolha o Serviço</option>
-                    <option value="20">Corte Masculino (30  min)</option>
-                    <option value="30">Corte Feminino (30  min)</option>
-                    <option value="60">Coloração (60 min)</option>
-                    <option value="45">Manicure e Pedicure (45 min)</option>
-                    <option value="120">Mechas/Luzes (120 min)</option>
-                </select>
-                <label for="data-hora">Data e Hora:</label>
-                <input type="datetime-local" id="data-hora" required aria-label="Data e hora do agendamento">
-                <button type="submit">Agendar Horário</button>
-            </form>
-            <div id="mensagem" class="hidden"></div>
-        </section>
-
-        <section id="grade-horarios">
-            <h2>🗓️ Grade de Horários Agendados</h2>
-            <div id="lista-agendamentos">
-                <p>Nenhum agendamento registrado localmente.</p>
-            </div>
-        </section>
-
-        <section id="admin-tools" class="hidden">
-            <h2>⚙️ Ferramentas Admin</h2>
-            <button onclick="excluirAgendamentoAdmin()" aria-label="Excluir agendamento">🗑️ Excluir Agendamento</button> 
-            <button onclick="editarHorarioAdmin()" aria-label="Editar horário">✏️ Editar Horário</button>
-            <button onclick="gerenciarPromocoesAdmin()" aria-label="Gerenciar promoções">📣 Gerenciar Promoções</button>
-            <button onclick="cadastrarClienteFielAdmin()" aria-label="Cadastrar cliente fiel">⭐ Cadastrar Cliente Fiel</button> 
-            <button onclick="excluirClienteFielAdmin()" aria-label="Excluir cliente fiel">❌ Excluir Cliente Fiel</button> 
-        </section>
-        
-        <section id="painel-principal-extra">
-            <div id="satisfacao-cliente">
-                <h3>⭐ Satisfação do Cliente</h3>
-                <p id="feedback-display">Nenhum feedback recebido ainda.</p>
-                <form id="form-feedback">
-                    <input type="text" id="feedback-name" placeholder="Seu Nome" required aria-label="Nome do cliente">
-                    <input type="text" id="feedback-input" placeholder="Seu feedback (ex: 5/5, Ótimo!)" required aria-label="Feedback do cliente">
-                    <button type="submit">Enviar Feedback</button>
-                </form>
-            </div>
-            <div id="promocoes-display">
-                <h3>💰 Promoções Atuais</h3>
-                <ul id="lista-promocoes">
-                    <li>Nenhuma promoção ativa no momento.</li>
-                </ul>
-            </div>
-        </section>
-        
-    </main>
-
-    <footer>
-        <p>vanderleia cabalereira Local Jandira  2025</p>
-    </footer>
-
-    <div id="login-modal" class="modal hidden">
-        <div class="modal-content">
-            <h2>Acesso Restrito</h2>
-            <form id="form-login">
-                <label for="admin-user">Usuário:</label>
-                <input type="text" id="admin-user" required aria-label="Usuário">
-                <label for="admin-pass">Senha:</label>
-                <input type="password" id="admin-pass" required aria-label="Senha">
-                <button type="submit">Entrar</button>
-                <button type="button" onclick="closeModal()">Cancelar</button>
-                <p id="login-message" class="hidden"></p>
-            </form>
-        </div>
+<div id="loginBox" class="login-box">
+    <div class="card login-card">
+        <h2>SGF Abençoado</h2>
+        <p>Acesso do Operador</p>
+        <input type="text" id="loginUser" placeholder="Usuário (ex: admin)">
+        <input type="password" id="senha" placeholder="Senha">
+        <button onclick="login()">Entrar</button>
+        <p id="loginError" style="color:red; display:none; margin-top:10px; font-size:12px;">Usuário ou senha incorretos!</p>
     </div>
+</div>
 
-    <script src="script.js"></script>
-</body>
+<div id="app" style="display:none">
+    <div class="sidebar" role="navigation" aria-label="Menu lateral">
+        <h2>SGF Abençoado</h2>
+        <div class="user-info">
+            <i class="fa fa-user-circle"></i> <span id="userNameDisplay"></span>
+         </div>
+         <div class="nav-links">
+         <ul>
+            <li><a data-page="dashboard" onclick="loadPage('dashboard')"><i class="fa fa-home"></i> Dashboard</a></li>
+            <li><a data-page="frota" onclick="loadPage('frota')"><i class="fa fa-car"></i> Veículos</a></li>
+            <li><a data-page="motoristas" onclick="loadPage('motoristas')"><i class="fa fa-users"></i> Motoristas</a></li>
+            <li><a data-page="usuarios" onclick="loadPage('usuarios')"><i class="fa fa-user-shield"></i> Operadores</a></li>
+            <li><a data-page="abastecimento" onclick="loadPage('abastecimento')"><i class="fa fa-gas-pump"></i> Abastecer</a></li>
+            <li><a data-action="logout" onclick="logout()"><i class="fa fa-sign-out-alt"></i> Sair</a></li>
+          </ul>
+         </div>
+         </div>
+
+         <div class="main-content">
+         <header>
+            <button id="navToggle" class="hamburger" aria-expanded="false" aria-label="Abrir menu"><i class="fa fa-bars"></i></button>
+            <div class="header-info">
+                <h1 id="pageTitle">Painel de Controle</h1>
+                <span id="currentDate"></span>
+            </div>
+         </header>
+         <section id="contentArea"></section>
+         </div>
+    </div>
+  <div id="navOverlay" class="nav-overlay" onclick="closeMobileNav()" aria-hidden="true"></div>
+
+  <script src="js/app.js"></script>
+ </body>
 </html>
